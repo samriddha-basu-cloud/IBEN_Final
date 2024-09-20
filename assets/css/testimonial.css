@@ -1,0 +1,81 @@
+* {box-sizing: border-box}
+
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+
+
+/* Slides */
+.mySlides {
+  display: none;
+  position: relative;
+  padding: 50px;
+  text-align: center;
+}
+
+.mySlides .image {
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(11, 142, 138, 0.8);
+  color: white;
+}
+
+
+
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: rgb(15, 92, 236);
+    padding-top: 5px;
+    font-weight: 600;
+}
+.designation {color: rgb(0, 0, 0);}
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }  
