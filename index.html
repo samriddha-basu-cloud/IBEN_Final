@@ -31,6 +31,62 @@
     <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
     <link rel="stylesheet" type="text/css" href="assets/css/testimonial.css">
+    <style>
+        /* Remove display: none to keep the iframe visible initially */
+        #iframe-container {
+            margin-top: 20px;
+        }
+        .video-container {
+            position: relative;
+        }
+        .show-iframe-btn {
+            position: relative;
+            top: 48.5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: 900; /* Make the text bold */
+            background: linear-gradient(to left,#1e81fa, #10ff48eb);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 1.5rem;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .show-iframe-btn:before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(to right,#1e81fa, #10ff48eb);
+            border-radius: inherit;
+            background-clip: padding-box;
+            border: solid 2px transparent;
+            animation: ping 1s infinite;
+        }
+
+        @keyframes ping {
+            0% {
+                transform: scale(0.1, 0.1);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+
 
 </head>
 
@@ -54,12 +110,18 @@
 
 
 
-    <div class="header-area1 ">
+    <!-- <div class="header-area1 ">
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="assets/images/video.mp4" type="video/mp4">
         </video>
-    </div>
+    </div> -->
 
+    <div class="header-area1 video-container">
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="assets/images/video.mp4" type="video/mp4">
+        </video>
+        <button class="show-iframe-btn" onclick="showIframe()">Check Your Business Inclusivity! </button>
+    </div>
 
     <header class="header-area header-sticky">
 
@@ -142,7 +204,7 @@
 
 
     <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area responsive" id="welcome">
+    <!-- <div class="welcome-area responsive" id="welcome"> -->
 
 
         <!-- ***** Header Text Start ***** -->
@@ -167,13 +229,12 @@
 
     <!-- ***** Features Big Item Start ***** -->
     <section class="section" id="about">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-12 col-sm-12"
-                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <div class="col-lg-3 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                     <img src="assets/images/left-image.gif" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
-                <div class="right-text col-lg-9 col-md-12 col-sm-12 mobile-top-fix">
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading">
                         <h5>About IBEN</h5>
                     </div>
@@ -183,7 +244,7 @@
                             businesses within the agriculture and food sectors. This network brings together a diverse
                             array of stakeholders, including private sector companies, social sector organizations,
                             government agencies, multilateral organizations, and impact focused investors among others.
-                            The network’s core activities are multifaceted and centred around facilitating
+                            The network's core activities are multifaceted and centred around facilitating
                             multi-stakeholder collaborations to support smallholder farmers, promote gender-inclusive
                             practices, and encourage sustainable practices.</p>
                         <p>Engagement with policymakers, like-minded organizations, networks and think tanks in India
@@ -191,11 +252,15 @@
                             policies for inclusive businesses. This includes advocacy efforts to influence policy and
                             create a favourable regulatory environment. Knowledge-sharing and capacity-building
                             activities, such as workshops, seminars, and research publications, further enhance the
-                            network’s impact by disseminating valuable insights and best practices among stakeholders.
+                            network's impact by disseminating valuable insights and best practices among stakeholders.
                             Through these concerted efforts, the Inclusive Business Ecosystem Network aims to create a
                             thriving ecosystem where inclusive businesses can flourish, ultimately contributing to a
                             more equitable and sustainable food system.</p>
-                        <!-- <a href="#about2" class="main-button">Discover More</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 mobile-top-fix" id="iframe-container">
+                    <div class="embed-container">
+                        <iframe src="https://bussines-model.vercel.app/" height="900px" width="100%"></iframe>
                     </div>
                 </div>
             </div>
@@ -204,8 +269,6 @@
                     <div class="hr"></div>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -851,6 +914,13 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        function showIframe() {
+            var iframeContainer = document.getElementById('iframe-container');
+            iframeContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 
 </body>
